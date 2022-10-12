@@ -1,0 +1,203 @@
+Ans. 1
+
+The layered architecture style is one of the most common architectural styles. The idea behind
+Layered Architecture is that modules or components with similar functionalities are
+organized into horizontal layers. As a result, each layer performs a specific role within the
+application.
+
+
+The layered architecture style does not have a restriction on the number of layers that the
+application can have, as the purpose is to have layers that promote the concept of separation of
+concerns. The layered architecture style abstracts the view of the system as a whole while
+providing enough detail to understand the roles and responsibilities of individual layers and
+the relationship between them
+
+For example a layered architecture can have following layers : 
+
+Presentation layer
+
+Business Layer 
+
+Persistence Layer
+
+Database Layer
+
+//************************************************************
+
+Ans. 2
+
+JDBC allows us to write SQL commands to read data from and update data to a relational database.
+ JPA, unlike JDBC, allows developers to construct database-driven Java programs utilizing 
+ object-oriented semantics. The JPA annotations describe how a given Java class and its 
+ variables map to a given table and its columns in a database.
+ 
+ When associating database tables in a query with JDBC, we need to write out the full 
+ SQL query, while with JPA, we simply use annotations to create one-to-one, one-to-many, 
+ many-to-one, and many-to-many associations.
+ 
+ JDBC is database-dependent, which means that different scripts must be written for 
+ different databases. On the other side, JPA is database-agnostic, meaning that the same 
+ code can be used in a variety of databases with few (or no) modifications.
+ 
+ Because JDBC throws checked exceptions, such as SQLException, we must write it in 
+ a try-catch block. On the other hand, the JPA framework uses only unchecked exceptions, 
+ like Hibernate. Hence, we don't need to catch or declare them at every place we're using them.
+ 
+ The difference between JPA and JDBC is essentially who does the coding: the JPA framework or a local developer. Either way, we'll have to deal with the object-relation impedance mismatch.
+
+To be fair, when we write SQL queries incorrectly, JDBC performance can be 
+abysmally sluggish. When deciding between the two technologies, performance 
+shouldn't be a point of dispute. Professional developers are more than capable of 
+producing Java applications that run equally well regardless of the technology utilized.
+
+
+JPA-based applications still use JDBC under the hood. Therefore, when we utilize JPA, 
+our code is actually using the JDBC APIs for all database interactions. In other words, 
+JPA serves as a layer of abstraction that hides the low-level JDBC calls from the developer,
+ making database programming considerably easier.
+ 
+ 
+ In JDBC, transaction management is handled explicitly by using commit and rollback.
+  On the other hand, transaction management is implicitly provided in JPA.
+
+//************************************************************
+
+Ans. 3
+
+JPA :
+
+JPA is described in javax.persistence package.
+
+It describes the handling of relational data in Java applications. 
+
+It is not an implementation. It is only a Java specification.
+
+It is a standard API that permits to perform database operations.
+
+As an object-oriented query language, it uses Java Persistence Query Language (JPQL) 
+to execute database operations.
+
+To interconnect with the entity manager factory for the persistence unit, it uses 
+EntityManagerFactory interface. Thus, it gives an entity manager.
+
+To make, read, and remove actions for instances of mapped entity classes, it uses 
+EntityManager interface. This interface interconnects with the persistence condition.
+
+
+
+Hibernate :
+
+Hibernate is described in org.hibernate package.
+
+Hibernate is an Object-Relational Mapping (ORM) tool that 
+is used to save the Java objects in the relational database system.
+
+Hibernate is an implementation of JPA. Hence, the common standard 
+which is given by JPA is followed by Hibernate.
+
+It is used in mapping Java data types with SQL data types and database tables.
+
+As an object-oriented query language, it uses Hibernate Query Language (HQL) to execute 
+database operations.
+
+To create Session instances, it uses SessionFactory interface.
+
+To make, read, and remove actions for instances of mapped entity classes, it uses Session interface. 
+It acts as a runtime interface between a Java application and Hibernate.
+
+
+//************************************************************
+
+Ans. 4
+
+
+The java persistence API is a specification in Java. It is used to persist data between Java object and relational
+database. It acts as a bridge between Java object and database.
+
+Entity An entity is a group of states associated together in a single unit. On adding behavior, an entity behaves
+like an object and becomes a major constituent of the object-oriented paradigm. So, an entity is an applicationdefined object in Java Persistence Library.
+Entity Properties:These are the properties of an entity that an object must have: -
+
+Persistability — An object is called persistent if it is stored in the database and can be accessed anytime.
+Persistent Identity — In Java, each entity is unique and represents an object identity. Similarly, when the
+object identity is stored in a database then it is represented as persistence identity. This object identity is
+equivalent to the primary key in the database.
+
+Transactionality — Entity can perform various operations such as create, delete, update. Each operation
+makes some changes in the database. It ensures that whatever changes made in the database either
+succeed or fail atomically.
+
+Granuality — Entities should not be primitives, primitive wrappers or built-in objects with single dimensional
+state.
+
+Entity Metadata:Each entity is associated with some metadata that represents the information of it. Instead of a
+database, this metadata is exist either inside or outside the class. This metadata can be in following forms: -
+Annotation — In Java, annotations are the form of tags that represents metadata. This metadata persists
+inside the class.
+
+XML — In this form, metadata persist outside the class in XML file.
+
+
+
+//************************************************************
+
+Ans. 5
+
+
+It is a programming technique for converting data between incompatible type
+systems using object-oriented programming languages.
+
+It means we can write database queries using the object oriented paradigm of your preferred language and
+there are many free and commercial packages available that perform object relational mapping.
+
+ORM sets the mapping between the set of objects which are written in the preferred programming language
+like Java and relational database like SQL. It hides and encapsulates the SQL queries into objects and
+instead of SQL queries we can use directly the objects to implement the SQL query.
+
+
+//************************************************************
+
+Ans. 6
+
+Core Components of Hibernate :
+
+
+1. Configuration:
+org.hibernate.cfg package contains the Configuration class.
+Configuration cfg = new Configuration() used to activate the Framework.
+It reads both cfg file and mapping files cfg.configure();
+Configuration object created once, at the time of initialization.
+
+2. SessionFactory:
+org.hibernate.sessionFactory package contains the SessionFactory Interface.
+It is immutable and thread-safe in nature.
+Day18: Maven introduction, dependencies, ORM introduction, Entity class, Java Persistence 14
+SessionFactory factory = cfg.buildSessionFactory() used while creation of SessionFactory object
+From cfg object it takes the JDBC information and create a JDBC Connection.
+
+3. Session:
+org.hibernate.session package contains the Session interface
+Session object created based upon SessionFactory object i.e. factory.
+It is a lightweight object and not thread-safe.
+Session object used to execute CRUD operations.
+Session session = factory.buildSession() used while the creation of Session object
+
+4. Transaction:
+org.hibernate.transaction package contains the Transaction interface
+Transaction object used whenever we perform any operation and based upon that operation there is some
+change in the database.
+It is a short-lived single-threaded object.
+Transaction tx = session.beginTransaction();tx.commit(); used while creation of Transaction object.
+
+5. Query:
+org.hibernate.query package contains the Query interface.
+The session objects are used to create query objects.
+Query objects use Hibernate Query Language (HQL) to get data from the database.
+Query query = session.createQuery() used while initialisation of Query object.
+
+6. Criteria:
+org.hibernate.criteria package contains the Criteria interface.
+The session objects are used to create Criteria Objects.
+Criteria criteria = session.createCriteria() used while initialisation of Criteria object.
+
+

@@ -1,0 +1,36 @@
+● Explain difference between JPA and Hibernate:
+Ans:
+
+
+JPA:
+
+JPA is a java specification which is used to access and modify data between Java
+object and RDB. It is a standard approach for Java ORM.
+
+
+
+Hibernate:
+
+Hibernate is a Java framework and it is used to store Java objects in the RDBMS.
+
+Hibernate is an implementation of JPA and hence it follows all the standards 
+provided by JPA along with some additional Hibernate specific implementations.
+
+
+//**************************************************
+
+
+● Explain about the Layered Architecture of a Java Based Business application:
+Ans.
+
+Basically there are 4 Layers of Architecture of a Java Based Business application
+which are as follows:
+
+1. Presentation Layer
+
+2. Business Logic Layer
+
+3. Persistence Layer
+
+4. Database Layer
+

@@ -1,0 +1,108 @@
+Ans 2. 
+
+There are many problems that we face during the project development. 
+They are discussed below:
+
+1) Adding set of Jars in each project: In case of struts, spring, 
+hibernate frameworks, we need to add set of jar files in each project. 
+It must include all the dependencies of jars also.
+
+2) Building and Deploying the project: We must have to build and deploy 
+the project so that it may work.
+
+
+the problems mentioned above can be handled very efficiently by Maven 
+and that is why the use of Maven is highly recommended.
+
+//********************************************
+
+Ans 3. 
+Maven is a tool that can now be used for building and managing 
+any Java-based project. It makes the day-to-day work of Java developers
+easier and generally help with the comprehension of any Java-based 
+project.
+
+Maven is a powerful project management tool that is based on POM 
+(project object model). It is used for projects build, dependency 
+and documentation.
+
+Dependency is defined as a state of needing something or someone.
+
+
+In Maven, a dependency is just another archive—JAR, ZIP, and so on—which 
+our current project needs in order to compile, build, test, and/or run. 
+These project dependencies are collectively specified in the pom.xml 
+file, inside of a <dependencies> tag.
+
+//********************************************
+Ans. 4
+
+For creating the simple pom.xml file, you need to have 
+following elements:
+
+project : It is the root element of pom.xml file.
+
+modelVersion : It is the sub element of project. 
+It specifies the modelVersion. It should be set to 4.0.0.
+
+groupId : It is the sub element of project. It specifies the id 
+for the project group.
+
+artifactId : It is the sub element of project. It specifies the 
+id for the artifact (project). An artifact is something that is either
+produced or used by a project. Examples of artifacts produced by Maven 
+for a project include: JARs, source and binary distributions, and WARs.
+
+
+version : It is the sub element of project. It specifies the version of the artifact under given group.
+
+//********************************************
+Ans. 5
+
+maven build life cycle contains following different phases:
+
+
+1. validate: - in this phase it will verify the project diectory 
+structure is valid or not. and it has pom.xml file is there or not.
+
+2.compile: maven compiles all the source code of the project by 
+downloading and adding requied jar files in the classpath.
+
+3.test-compile: if we have written any unit test cases those 
+code will be compiled.
+
+4.test : maven will run all the test cases and it will show 
+how many test cases are success and how many fails.
+
+5.package : maven will bundle our java code into a jar file 
+inside 'target' folder.
+
+6.install : that jar file in step 5 will be stored in the localrepo.
+
+7.deploy : maven stores the application jar file to the central repo.
+
+**8.clean : here maven will delete and remove all the files that 
+are generated in previous build. this phase is an isolated phase.
+
+
+//********************************************
+Ans. 6
+
+maven repo are of 3 types:
+
+1.central repo :- it is the maven's own repo in which it 
+maintains all kinds of project related plugins, archetypes, jars etc.
+https://repo1.maven.org/maven2
+
+2.remote repo : this repo is maintained within the organization for 
+sharing plugins, archetypes and jar files for multiple projects within
+ orgnizations. ex: masairepo
+
+
+
+3.local repo: this repo will be created inside the developer computer.
+ (.m2) is the name for this repo.
+ 
+ 
+ 
+ 
